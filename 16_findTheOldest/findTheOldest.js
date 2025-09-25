@@ -1,14 +1,16 @@
+
 const findTheOldest = function(people) {
 
     let oldestPerson = {}; 
-    let highestAge = 0:
+    let highestAge = 0;
 
     people.forEach((element) => {
+        console.log(element)
         //When the Person is still alive get the actual year
         const lastYear = element.yearOfDeath || new Date().getFullYear();
         const ageOfPerson =  lastYear -  element.yearOfBirth;
 
-        if (highestAge > ageOfPerson) {
+        if (ageOfPerson > highestAge) {
             highestAge = ageOfPerson;
             oldestPerson = element;
         }
