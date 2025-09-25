@@ -1,6 +1,12 @@
 const fibonacci = function(position) {
+    position = Number(position)
+    
+    if(position < 0){
+        return "OOPS";
+    }
     let arr = [];
     let arrValue = 0;
+    
     for(i = 0; i <= position; i++){
         if(i == 0){
             arrValue = 0;
@@ -9,12 +15,17 @@ const fibonacci = function(position) {
             arrValue = 1;
         }
         else {
-            arrValue = arr[i-1] + arr[i]  
+
+            arrValue = arr.at(i-2);
+            arrValue += arr.at(i-1);
         }
         arr.push(arrValue);
+        
     }
-    return arr[position]
+
+    return arr.at(position);
 };
+
 
 // Do not edit below this line
 module.exports = fibonacci;
